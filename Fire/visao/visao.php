@@ -70,7 +70,7 @@ session_start();
                   
                 </ul>
             </div>
-            <button class="btn fifth">EMERGÊNCIA</button>
+            
             <div class="sidebar-bottom">
                 <div class="color-box dark"></div>
                 <div class="color-box night"></div>

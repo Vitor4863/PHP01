@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,9 +14,12 @@
 	
 	<div class="container" id="container">
 		<div class="form-container log-in-container">
-			<form action="../dao/cad.php" method="Post">
-				<h1 id="titulo">Prencha seus Dados</h1>
+			<form action="../dao/ed_perfil.php" method="Post">
+				<h1 id="titulo">Editar</h1>
 				<div class="grid">
+					<input  name="id" hidden="true" value="<?php
+					echo $_SESSION['id'];
+					?> ">
 					<div><input type="text" placeholder="nome" name="nome" required/></div>
 					<input type="email" placeholder="Email" name="email" required/>
                     <input type="usuario" placeholder="usuario" name="usuario" required/>

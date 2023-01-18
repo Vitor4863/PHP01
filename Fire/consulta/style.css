@@ -345,6 +345,23 @@ button:hover {
     color: #ffffff;
     border-radius: 5px;
 }
+#btn {
+  padding: 10px;
+  font-size: 18px;
+  background-color: #071a85;
+  border: 1px transparent;
+  border-radius: 5px;
+  transition: 225ms background linear;
+  cursor: pointer;
+  color: #fdfdfd;
+
+}
+
+#btn:hover {
+  background-color: #070202;
+  color: #ffffff;
+  border-radius: 5px;
+}
 
 .alergia {
     display: flex;
