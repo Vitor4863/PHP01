@@ -18,16 +18,12 @@ include_once "../dao/conexao.php";
         
     <div class="tudo">
         <div class="sidebar">
-            <div class="sidebar-top">
+           <a href="../visao/visao.php"><div class="sidebar-top">
                 <img src="img/flames.png" alt="" width="40px">
                 <span class="brand">FireHelpCenter</span><br>
                  
-            </div>
-            <div class="sidebar-top">
+            </div></a>
             
-                <span class="brand"></span><br>
-                 
-            </div>
             <div class="sidebar-center">
                 <ul class="list">
                    <a href="../consulta/perfil.php"><li class="list-item">

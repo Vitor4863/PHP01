@@ -24,7 +24,7 @@ session_start();
 					<input type="email" placeholder="Email" name="email" required/>
                     <input type="usuario" placeholder="usuario" name="usuario" required/>
                     <input type="password" placeholder="senha" name="senha" required/>
-					<div><input type="date" name="dataNascimento" required/></div>
+					<div><input type="data" name="dataNascimento" required/></div>
 					<div><input type="text" placeholder="telefone" name="telefone" required maxlength="9"/></div>
 					<div><input type="text" placeholder="cpf"  name="cpf" required maxlength="11"/></div>
 					<div><input type="text" placeholder="cep" name="cep" required maxlength="8"/></div>

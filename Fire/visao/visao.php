@@ -3,7 +3,7 @@ session_start();
 
 
 ?>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -70,7 +70,7 @@ session_start();
                   
                 </ul>
             </div>
-            
+            <button class="btn fifth">EMERGÊNCIA</button>
             <div class="sidebar-bottom">
                 <div class="color-box dark"></div>
                 <div class="color-box night"></div>
