@@ -138,7 +138,7 @@
                     <?php
 					echo $_SESSION['telefone'];
 					?> <br>
-                    <input  id="telefone" type="telefone" placeholder="telefone" hidden name="telefone" class="input">
+                    <input  id="telefone" type="telefone" onkeydown="return mascaraTelefone(event)"  maxlength="12" placeholder="telefone" hidden name="telefone" class="input">
                 </div>
 
                 <div class="underline"></div>
@@ -149,7 +149,7 @@
                     <?php
 					echo  $_SESSION['cpf'];
 					?> <br>
-                    <input id ="cpf" type="text" placeholder="CPF" hidden name="cpf" class="input">
+                    <input id ="cpf" type="text" maxlength="14" placeholder="CPF"  onkeydown="javascript: fMasc( this, mCPF );" hidden name="cpf" class="input">
 
                 </div>
 
@@ -161,7 +161,7 @@
                     <?php
 					echo $_SESSION['cep'];
 					?> <br>
-                    <input id="cep" type="text" placeholder="CEP" hidden name="cep" class="input">
+                    <input id="cep" type="text" required maxlength="9"  onkeyup="handleZipCode(event)" name="cep" placeholder="CEP" hidden name="cep" class="input">
                 </div>
 
                 <div class="underline"></div>
@@ -172,7 +172,7 @@
                     <?php
 					echo  $_SESSION['numeroSeguranca'];
 					?> <br>
-                    <input id="numeroSeguranca" type="text" placeholder="Numero de Segurança" hidden name="numeroSeguranca" class="input">
+                    <input id="numeroSeguranca" type="text" onkeydown="return mascaraTelefone(event)" placeholder="Numero de Segurança" hidden name="numeroSeguranca" class="input">
                 </div>
 
                 <div class="underline"></div>
