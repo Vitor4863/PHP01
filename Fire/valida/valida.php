@@ -10,7 +10,7 @@ if($btnLogin){
 		//Gerar a senha criptografa
 		//echo password_hash($senha, PASSWORD_DEFAULT);
 		//Pesquisar o usuário no BD
-		$result_usuario = "SELECT id, nome, email, senha , dataNascimento , telefone , cpf , cep , numeroSeguranca , deficiencia , alergia , sangue , pcd FROM tb_usuario WHERE usuario='$usuario' LIMIT 1";
+		$result_usuario = "SELECT id, nome, email, usuario, senha , dataNascimento , telefone , cpf , cep , numeroSeguranca , deficiencia , alergia , sangue , pcd  FROM tb_usuario WHERE usuario='$usuario' LIMIT 1";
 		$resultado_usuario = mysqli_query($conn, $result_usuario);
 		if($resultado_usuario){
 			$row_usuario = mysqli_fetch_assoc($resultado_usuario);
@@ -18,6 +18,9 @@ if($btnLogin){
 				$_SESSION['id'] = $row_usuario['id'];
 				$_SESSION['nome'] = $row_usuario['nome'];
 				$_SESSION['email'] = $row_usuario['email'];
+				$_SESSION['cep'] = $row_usuario['cep'];
+				$_SESSION['senha'] = $row_usuario['senha'];
+				$_SESSION['usuario'] = $row_usuario['usuario'];
                 $_SESSION['dataNascimento'] = $row_usuario['dataNascimento'];
                 $_SESSION['telefone'] = $row_usuario['telefone'];
                 $_SESSION['cpf'] = $row_usuario['cpf'];
@@ -28,12 +31,12 @@ if($btnLogin){
                 $_SESSION['pcd'] = $row_usuario['pcd'];
 				header("Location: ../visao/visao.php");
 			}else{
-				$_SESSION['msg'] = "Login e senha incorreto!";
+				$_SESSION['msg'] = "Login ou senha incorreto!";
 				header("Location: ../login/login.php");
 			}
 		}
 	}else{
-		$_SESSION['msg'] = "Login e senha incorreto!";
+		$_SESSION['msg'] = "Login ou senha incorreto!";
 		header("Location: ../login/login.php");
 	}
 }else{

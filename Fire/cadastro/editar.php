@@ -8,7 +8,7 @@ session_start();
 <head>
 	<link rel="stylesheet" href="estilo.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<title>cadastrar</title>
+	<title>Cadastrar</title>
 </head>
 <body>
 	

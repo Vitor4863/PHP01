@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="img/flame-outline.svg">
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="sobre.css">
     <title>sobre</title>
 </head>
 <body>
@@ -16,7 +16,7 @@
                <a href="visao.php"><img src="img/flames.png" alt="" width="40px"></a>
                <a href="index.html"><span class="brand">FireHelpCenter</span></a>
 
-                <div id="espace"></div>
+                <div id="sidebar"></div>
                 <div class="sidebar-bottom">
                     <div class="color-box dark"></div>
                     <div class="color-box night"></div>

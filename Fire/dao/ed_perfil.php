@@ -14,7 +14,7 @@ $email = $_POST["email"];
 $usuario = $_POST["usuario"];
 
 //$senha = PASSWORD_HASH($_POST["senha"], PASSWORD_DEFAULT);
-$senha = $_POST["senha"];
+//$senha = $_POST["senha"];
 // recebe a data
 $data = $_POST["dataNascimento"];
 // recebe o telefone
@@ -36,7 +36,7 @@ $sangue = $_POST["sangue"];
 $pcd = $_POST["pcd"];
 
 
-$sql = "update tb_usuario set nome = '$nome',email = '$email',usuario = '$usuario',senha = '$senha ',dataNascimento = '$data',telefone = '$telefone', cpf='$cpf',cep='$cep',numeroSeguranca='$numeroSeguranca',deficiencia='$deficincia',alergia='$alergia', sangue='$sangue',pcd='$pcd' where id = '$id' ";
+$sql = "update tb_usuario set nome = '$nome',email = '$email',usuario = '$usuario',dataNascimento = '$data',telefone = '$telefone', cpf='$cpf',cep='$cep',numeroSeguranca='$numeroSeguranca',deficiencia='$deficincia',alergia='$alergia', sangue='$sangue',pcd='$pcd' where id = '$id' ";
 
 
 if(mysqli_query($conn,$sql)){
