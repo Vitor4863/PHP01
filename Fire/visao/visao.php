@@ -14,14 +14,10 @@ session_start();
         crossorigin="anonymous"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
         rel="stylesheet">
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin=""/>
+        
     <link rel="shortcut icon" type="image/x-icon" href="img/flame-outline.svg">
-     <!-- Make sure you put this AFTER Leaflet's CSS -->
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-    crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" />
+	<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
     <title>FireHelpCenter</title>
     <style>#mapid { 
 		height: 100%;
@@ -99,11 +95,12 @@ session_start();
                     <!--<a href="#" class="modal__link">OK</a> -->
                     
                 </div>
+                
             </div>
-
             <div id="map" class="mapa"></div>
 	<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"></script>
 	<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+           
                 <!--pop-up-->
         
         <!--<div class="mapa">-->
@@ -117,6 +114,7 @@ session_start();
 
     
     <script src="script.js"></script>
+    
     <script>
 //let h2 = document.querySelector('h2');
  //var map;
