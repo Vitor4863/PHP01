@@ -43,6 +43,10 @@
                        <i class="list-item-icon fas fa-book"></i>
                         <a href="../visao/sobre.php"><span class="list-item-text">Help</span></a>
                     </li>
+                    <li class="list-item">
+                     
+                        <a href="RecuperarSenha.php"  hidden>Alterar Senha</span></a>
+                    </li>
                     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@600&display=swap" rel="stylesheet">
         <script src="https://unpkg.com/phosphor-icons"></script>
                 </ul>
@@ -75,13 +79,15 @@
 					echo $_SESSION['id'];
 					?> ">
                 <div class="nome" >
-                    
                     <span><strong>Nome:</strong> </span>
                     <?php
 					echo $_SESSION['nome'];
 					?> <br>
                   
-                 <input placeholder="Nome"  id ="nome" type="text"  hidden name="nome" class="input">
+                 
+                  <input  class="input" placeholder="Nome" hidden name="nome" id ="nome"   value="<?php
+                    echo $_SESSION['nome'];
+                    ?> ">
                  
                 </div>
                 <div class="underline"></div>
@@ -93,7 +99,11 @@
                     <?php 
 					echo $_SESSION['usuario'];
 					?> <br>
-                       <input  id ="usuario" type="text" placeholder="Usuario" hidden name="usuario" class="input">
+                    <input  class="input" placeholder="Usuario" hidden  id ="usuario" name="usuario"  value="<?php
+                    echo $_SESSION['usuario'];
+                    ?> ">
+                      
+                       
                 </div>
 
                 <div class="underline"></div>
@@ -104,7 +114,10 @@
 					echo $_SESSION['email'];
                     
 					?> <br>
-                   <input  id ="email" type="email" placeholder="Email" hidden name="email" class="input">
+                    <input  class="input" type="email" placeholder="Email" hidden id ="email" name="email"  value="<?php
+                    echo $_SESSION['email'];
+                    ?> ">
+                   
                 </div>
 
                 <div class="underline"></div>
@@ -125,8 +138,10 @@
                     <?php
 					echo $_SESSION['dataNascimento'];
 					?> <br>
-                    <input  id ="data" type="date" placeholder="Data" hidden name="dataNascimento" class="input">
-                    
+                  
+                    <input  class="input" type="date" placeholder="Data" hidden name="dataNascimento" id ="data"  value="<?php
+                    echo $_SESSION['dataNascimento'];
+                    ?> ">
                 </div>
 
 
@@ -138,8 +153,10 @@
                     <?php
 					echo $_SESSION['telefone'];
 					?> <br>
-                    <input  id="telefone" type="telefone" onkeydown="return mascaraTelefone(event)"  maxlength="12" placeholder="Telefone" hidden name="telefone" class="input">
-                </div>
+                    <input  class="input" type="telefone" onkeydown="return mascaraTelefone(event)"  maxlength="12" placeholder="Telefone" hidden name="telefone" id ="telefone"  value="<?php
+                    echo $_SESSION['telefone'];
+                    ?> ">
+                   
 
                 <div class="underline"></div>
 
@@ -149,8 +166,11 @@
                     <?php
 					echo  $_SESSION['cpf'];
 					?> <br>
-                    <input id ="cpf" type="text" maxlength="14" placeholder="CPF"  onkeydown="javascript: fMasc( this, mCPF );" hidden name="cpf" class="input">
-
+                    
+                       
+                    <input  class="input" type="text" onkeydown="javascript: fMasc( this, mCPF );"  maxlength="14" placeholder="CPF" hidden name="cpf" id ="cpf"  value="<?php
+                    echo $_SESSION['cpf'];
+                    ?> ">
                 </div>
 
                 <div class="underline"></div>
@@ -161,7 +181,10 @@
                     <?php
 					echo $_SESSION['cep'];
 					?> <br>
-                    <input id="cep" type="text" required maxlength="9"  onkeyup="handleZipCode(event)" name="cep" placeholder="CEP" hidden name="cep" class="input">
+                     <input  class="input" type="text" required maxlength="9"  onkeyup="handleZipCode(event)"  placeholder="CEP" hidden name="cep" id ="cep"  value="<?php
+                    echo $_SESSION['cep'];
+                    ?> ">
+                 
                 </div>
 
                 <div class="underline"></div>
@@ -172,7 +195,10 @@
                     <?php
 					echo  $_SESSION['numeroSeguranca'];
 					?> <br>
-                    <input id="numeroSeguranca" type="text" onkeydown="return mascaraTelefone(event)" placeholder="Numero de Segurança" hidden name="numeroSeguranca" class="input">
+                    <input  class="input" type="text" maxlength="12" onkeydown="return mascaraTelefone(event)"  placeholder="Numero de Segurança" hidden name="numeroSeguranca" id ="numeroSeguranca"  value="<?php
+                    echo $_SESSION['numeroSeguranca'];
+                    ?> ">
+                   
                 </div>
 
                 <div class="underline"></div>
@@ -183,7 +209,10 @@
                     <?php
 					echo $_SESSION['alergia'];
 					?> <br>
-                    <input id="alergia" type="text" placeholder="Alergia" hidden name="alergia" class="input"> 
+                    
+                    <input  class="input" type="text"  placeholder="Alergia" hidden name="alergia" id ="alergia"  value="<?php
+                    echo $_SESSION['alergia'];
+                    ?> ">
                 </div>
 
                 <div class="underline"></div>
@@ -194,8 +223,11 @@
                     <?php
 					echo $_SESSION['sangue'];
 					?> <br>
+
                    
-                    <div><select  name="sangue"  id="sangue"  hidden  class="input">
+                    <div><select  name="sangue"  id="sangue"  hidden  class="input" value="<?php
+                    echo $_SESSION['sangue'];
+                    ?>">
 						<option placeholder="Selecione seu tipo de sanguinio">Tipo de sanguinio</option>
 						<option>A+</option>
 						<option>A-</option>
@@ -216,7 +248,9 @@
 					echo $_SESSION['pcd'];
 					?> <br>
                     
-                    <select  name="pcd"  id="pcd"  hidden class="input">
+                    <select  name="pcd"  id="pcd"  hidden class="input" value="<?php
+                    echo $_SESSION['pcd'];
+                    ?> ">
 						<option >PCD</option>
 						<option>Sim</option>
 						<option>Não</option>
@@ -232,8 +266,10 @@
                     <?php
 					echo $_SESSION['deficiencia'];
 					?> <br>
+                     <input  class="input" type="text"  placeholder="Deficiencia" hidden name="deficiencia" id ="deficiencia"  value="<?php
+                    echo $_SESSION['deficiencia'];
+                    ?> ">
                     
-                    <input id="deficiencia" type="text" placeholder="Deficiencia" hidden name="deficiencia" class="input">
 
                 </div>
 

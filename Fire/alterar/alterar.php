@@ -14,11 +14,10 @@
 <div class="form-container log-in-container">
 	<a class= "login" href="../login/login.php"><i class="ph-arrow-circle-left"></i> </a>
 	
-    <form action="../dao/alt_senha.php" method="Post">
+    <form action="../alterar/PHPMailer/envia.php" method="Post">
 	
 		<h1>Alterar</h1>
-        <input type="text" name="usuario" placeholder="Digite o usuario" require>
-        <input type="password" name="senha" placeholder="Digite sua senha" require>
+        <input type="text" name="email" placeholder="Digite o email" require>
         <div class="wthree-text">
 						<div class="check">
 							<input type="checkbox" class="checkbox" required="">
@@ -26,7 +25,7 @@
 						</div> 
 						<div class="clear"> </div>
 					</div>
-		<button type="submit" name="btnLogin" value="Acessar">Alterar</button>    
+		<button type="submit" name="btnLogin" value="Acessar">Enviar</button>    
     </form>
     </div>
 	<div class="overlay-container">
