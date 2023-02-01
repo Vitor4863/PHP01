@@ -405,6 +405,49 @@ body.dark .container_info a:nth-child(1) i:hover{
     font-size: 12px;
     color: rgb(9, 10, 10);
 }
+.modal__link{ 
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-green);
+    color: #ffffff;
+    padding: 0.7rem 3rem;
+    margin-top: 1rem;
+    border-radius: 4px;
+	border: none;
+}
+.btn2 {
+	box-sizing: border-box;
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+			appearance: none;
+	background-color: transparent;
+	border: 2px solid #850303;
+	border-radius: 0.6em;
+	color: #d60505;
+	cursor: pointer;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-align-self: center;
+		-ms-flex-item-align: center;
+			align-self: center;
+	font-size: 0.6rem;
+	font-weight: 600;
+	line-height: 1;
+	margin: 0px;
+	padding: 2em 2.4em;
+	text-decoration: none;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+  }
+  .btn2:hover, .btn:focus {
+	color: #fff;
+	outline: 0;
+  }
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     *{
         margin: 0;

@@ -18,7 +18,7 @@
         integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
         crossorigin="anonymous"/>
 
-    <link rel="stylesheet" href="user4.css">
+    <link rel="stylesheet" href="user6.css">
 
     
 </head>
@@ -40,8 +40,13 @@
                     </li></a>
                     
                     <li class="list-item">
-                       <i class="list-item-icon fas fa-book"></i>
-                        <a href="../visao/sobre.php"><span class="list-item-text">Help</span></a>
+                       
+                       <form action="../dao/apagar.php">
+                       <input class="DE" type="text" placeholder="id" required name="id" hidden value="<?php
+					echo $_SESSION['id'];
+					?> ">
+                        <input class="btn2" type="submit" name="Deletar Conta" value="Apagar Conta">
+                        </form>
                     </li>
                     <li class="list-item">
                      
@@ -52,11 +57,8 @@
                 </ul>
             </div>
             
-            <div class="sidebar-bottom">
-                <div class="color-box dark"></div>
-                <div class="color-box night"></div>
-                <div class="color-box light"></div>
-            </div>
+
+        
 
     </div>
     <section id="main_user">

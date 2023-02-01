@@ -10,7 +10,7 @@
 	
 	<div class="container" id="container">
 		<div class="form-container log-in-container">
-		<a class= "login" href="../login/login.php"><i class="ph-arrow-circle-left"></i> </a>
+		<a class= "login" href="../login/index.php"><i class="ph-arrow-circle-left"></i> </a>
 			<form action="../dao/cad.php" method="Post">
 				<h1 id="titulo">Prencha seus Dados</h1>
 				<div class="grid">

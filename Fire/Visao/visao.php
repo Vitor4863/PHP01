@@ -18,6 +18,8 @@ session_start();
     <link rel="shortcut icon" type="image/x-icon" href="img1/flame-outline.svg">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" />
 	<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.74.4/dist/L.Control.Locate.min.css" />
     <title>FireHelpCenter</title>
     <style>#mapid { 
 		height: 100%;
@@ -44,10 +46,10 @@ session_start();
             <?php
                 if(!empty($_SESSION['id'])){
                     echo "Olá ".$_SESSION['nome'].", Bem vindo <br>";
-                    echo "<a href='../Login/login.php'></br></br>Sair</a>";
+                    echo "<a href='../Login/index.php'></br></br>Sair</a>";
                 }else{
                     $_SESSION['msg'] = "Área restrita";
-                    header("Location: ../Login/login.php");	
+                    header("Location: ../Login/index.php");	
                 }
                 
                 ?>
@@ -81,13 +83,20 @@ session_start();
                         <h2 class="modal__title">Detalhes do Acidente</h2>
                         <p class="modal__description">
                             <form action="../PHPMailer/envia.php" method="post">
-                            <input class="DE" type="text" placeholder="nome" required name="nome" hidden value="<?php
-					echo $_SESSION['nome'];
-					?> "> <br> 
+                           
                                 <input class="DE" type="text" placeholder="Rua" required name="rua"><br>
                                
                                 <textarea class="DE" type="text" placeholder="Detalhes da emergencia" name="mensagem"></textarea><br>
-                                <input class="modal__link" type="submit" name="enviar" >
+                                <input class="DE" type="text" placeholder="nome" required name="nome" hidden value="<?php
+					echo $_SESSION['nome'];
+					?> "> <br> 
+                    <input class="DE" type="text" placeholder="email" required name="email" hidden value="<?php
+					echo $_SESSION['email'];
+					?> "> <br> 
+                    <input class="DE" type="text" placeholder="cpf" required name="cpf" hidden value="<?php
+					echo $_SESSION['cpf'];
+					?> "> <br> 
+                                <input class="modal__link" type="submit" name="enviar" onclick="carrinho()">
                                 <a href="visao.php" class="modal__link2">Voltar</a> 
                             </form>
                         </p>
@@ -111,9 +120,11 @@ session_start();
     </div>
     
 
-    
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.74.0/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+
     <script src="script.js"></script>
-    
+      
     <script>
 //let h2 = document.querySelector('h2');
  //var map;
@@ -148,77 +159,57 @@ session_start();
 //});
 
 
-var map = L.map('map').setView([-22.897003892194146, -43.122873140890285], 16);
+var map = L.map('map').setView([-22.89184009215585, -43.11335177244824], 11);
 		mapLink = "<a href='http://openstreetmap.org'>OpenStreetMap</a>";
 		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: 'Leaflet &copy; ' + mapLink + ', contribution', maxZoom: 18 }).addTo(map);
 
 		var taxiIcon = L.icon({
 			iconUrl: 'img1/bombeiro.png',
-			iconSize: [50, 50]
+			iconSize: [70, 70]
 		})
-        
+         
+		var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+});
+osm.addTo(map);
 
-		var marker = L.marker([-22.897003892194146, -43.122873140890285], { icon: taxiIcon }).addTo(map);
-        var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    });
-    osm.addTo(map);
 
-    if(!navigator.geolocation) {
-        console.log("Your browser doesn't support geolocation feature!")
-    } else {
-        setInterval(() => {
-            navigator.geolocation.getCurrentPosition(getPosition)
-        }, 5000);
-    }
+ var locator = L.control.locate().addTo(map);
 
-    var local, circle;
+      
+		var marker = L.marker([-22.89184009215585, -43.11335177244824], { icon: taxiIcon }).addTo(map);
 
-    function getPosition(position){
-        // console.log(position)
-        var lat = position.coords.latitude
-        var long = position.coords.longitude
-        var accuracy = position.coords.accuracy
-
-        if(local) {
-            map.removeLayer(local)
-        }
-
-        if(circle) {
-            map.removeLayer(circle)
-        }
-
-        local = L.marker([lat, long])
-        circle = L.circle([lat, long], {radius: accuracy})
-
-        var featureGroup = L.featureGroup([local, circle]).addTo(map)
-
-        map.fitBounds(featureGroup.getBounds())
-
-        console.log("Your coordinate is: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy)
-
-        map.on('click', function (e) {
+		map.on('click', function (e) {
+          
 			console.log(e)
 			var newMarker = L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
 			L.Routing.control({
 				waypoints: [
-					L.latLng(-22.897003892194146, -43.122873140890285),
+					L.latLng(-22.89184009215585, -43.11335177244824),
 					L.latLng(e.latlng.lat, e.latlng.lng)
+                    
 				]
+               
 			}).on('routesfound', function (e) {
 				var routes = e.routes;
 				console.log(routes);
 
-				e.routes[0].coordinates.forEach(function (coord, index) {
+				e.routes[0].coordinates.forEach(function (coord, index ) {
 					setTimeout(function () {
-						marker.setLatLng([coord.lat, coord.lng]);
-					}, 950 * index)
+						marker.setLatLng([coord.lat, coord.lng ]);
+					}, 500 * index)
+
+                    
 				})
+                
 
 			}).addTo(map);
 		});
-        
-    }
+ // Map initialization 
+
+
+//osm layer
+
 
 
    </script>

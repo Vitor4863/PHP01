@@ -23,28 +23,26 @@ try {
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = '
-
-    ';                     //SMTP username
+    $mail->Username   = 'firehelpcenter@gmail.com';                     //SMTP username
     $mail->Password   = '';                               //SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('
+    $mail->setFrom('firehelpcenter@gmail.com
 
-    ', '
+    ', 'firehelpcenter@gmail.com
     ');
-    $mail->addAddress('
+    $mail->addAddress('firehelpcenter@gmail.com
 
-    ', '
+    ', 'firehelpcenter@gmail.com
     ');     //Add a recipient
     //$mail->addAddress('ellen@example.com');               //Name is optional
-    $mail->addReplyTo('
+    $mail->addReplyTo('firehelpcenter@gmail.com
     ', 'Information');
-    $mail->addCC('
+    $mail->addCC('firehelpcenter@gmail.com
     ');
-    $mail->addBCC('
+    $mail->addBCC('firehelpcenter@gmail.com
     ');
     
      
@@ -55,11 +53,12 @@ try {
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = '';
-    $mail->Body  = $_POST['nome']."<br>"."<h3>Endereço:</h3>".$_POST['rua']." <br> "."<h3>Emergencia:</h3>".$_POST['mensagem'];
+    $mail->Body  = "<h3>Nome:</h3>".$_POST['nome']."<h3>CPF:</h3>".$_POST['cpf']."<br>"."<h3>Email:</h3>".$_POST['email']."<h3>Endereço:</h3>".$_POST['rua']." <br> "."<h3>Emergencia:</h3>".$_POST['mensagem'];
     $mail->send();
     
     echo 'Message has been sent';
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    echo "<script> location.href='../visao/visao.php';</script>";
 }
 

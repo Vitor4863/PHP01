@@ -6,8 +6,8 @@ if(!empty($id)){
 	$result_usuario = "DELETE FROM tb_usuario WHERE id='$id'";
 	$resultado_usuario = mysqli_query($conn, $result_usuario);
 	if(mysqli_affected_rows($conn)){
-		$_SESSION['msg'] = "<p style='color:green;'>Usuário apagado com sucesso</p>";
-		header("Location: ../consulta/consulta.php");
+		$_SESSION['msg'] = "<p style='color:green;'>Sua conta foi excluida com sucesso!</p>";
+		header("Location: ../login/index.php");
 	}else{
 		
 		$_SESSION['msg'] = "<p style='color:red;'>Erro o usuário não foi apagado com sucesso</p>";

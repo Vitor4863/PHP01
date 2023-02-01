@@ -47,6 +47,6 @@ if(mysqli_query($conn,$sql)){
     }
     
     mysqli_close($conn);
-    echo "<script> location.href='../login/login.php';</script>"
+    echo "<script> location.href='../login/index.php';</script>"
 
     ?>

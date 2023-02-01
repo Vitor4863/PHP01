@@ -32,14 +32,14 @@ if($btnLogin){
 				header("Location: ../visao/visao.php");
 			}else{
 				$_SESSION['msg'] = "Login ou senha incorreto!";
-				header("Location: ../login/login.php");
+				header("Location: ../login/index.php");
 			}
 		}
 	}else{
 		$_SESSION['msg'] = "Login ou senha incorreto!";
-		header("Location: ../login/login.php");
+		header("Location: ../login/index.php");
 	}
 }else{
 	$_SESSION['msg'] = "Página não encontrada";
-	header("Location: ../login/login.php");
+	header("Location: ../login/index.php");
 }

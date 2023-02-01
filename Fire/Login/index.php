@@ -35,7 +35,7 @@ session_destroy();
 				<input type="password" name="senha" placeholder="Digite a sua senha">
 				
 				  
-				<a class="alterar" href="../alterar/alterar.php">Altera sua senha </a> 
+				
                 <button type="submit" name="btnLogin" value="Acessar">Acessar</button>  
 				<a class= "conta" href="../cadastro/cadastra.php">Crie sua conta</a> 
 				
